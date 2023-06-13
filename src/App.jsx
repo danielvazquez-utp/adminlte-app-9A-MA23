@@ -1,15 +1,17 @@
 import React from 'react';
-import Header from './components/Header';
-import Content from './components/Content';
-import Footer from './components/Footer';
+import Addform from './components/Addform';
+import EditForm from './components/EditForm';
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const App = () => {
   return (
-    <>
-      <Header />
-      <Content />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={ <Addform /> }  />
+        <Route path="/edit" element={ <EditForm /> }  />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
